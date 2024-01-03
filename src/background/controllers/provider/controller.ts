@@ -9,7 +9,7 @@ import { SendTDC } from "@/background/services/keyring/types";
 class ProviderController {
   connect = async () => {
     if (storageService.currentWallet === undefined) return undefined;
-    const _account = await storageService.currentWallet.accounts[0];
+    const _account = storageService.currentWallet.accounts[0];
     const account = _account ? _account.address : "";
     sessionService.broadcastEvent("accountsChanged", account);
     return account;
@@ -71,6 +71,28 @@ class ProviderController {
   };
 
   @Reflect.metadata("SAFE", true)
+  calculateFee = async ({
+    session: { origin },
+    data: {
+      params: { hex, feeRate },
+    },
+  }) => {
+    if (!permission.siteIsConnected(origin)) return undefined;
+    const psbt = Psbt.fromHex(hex);
+    (psbt as any).__CACHE.__UNSAFE_SIGN_NONSEGWIT = true;
+
+    keyringService.signPsbt(psbt);
+    let txSize = psbt.extractTransaction(true).toBuffer().length;
+    psbt.data.inputs.forEach((v) => {
+      if (v.finalScriptWitness) {
+        txSize -= v.finalScriptWitness.length * 0.75;
+      }
+    });
+    const fee = Math.ceil(txSize * feeRate);
+    return fee;
+  };
+
+  @Reflect.metadata("SAFE", true)
   getPublicKey = async ({ session: { origin } }) => {
     if (!permission.siteIsConnected(origin)) return undefined;
     const _account = storageService.currentWallet.accounts[0];
@@ -81,9 +103,7 @@ class ProviderController {
   @Reflect.metadata("APPROVAL", [
     "SignText",
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    (req: any) => {
-      // console.log(req);
-    },
+    (_req: any) => {},
   ])
   signMessage = async ({
     data: {
@@ -102,17 +122,15 @@ class ProviderController {
   @Reflect.metadata("APPROVAL", [
     "CreateTx",
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    (req: any) => {
-      // console.log(req);
-    },
+    (_req: any) => {},
   ])
-  createTx = async (data) => {
+  createTx = async (data: any) => {
     const account = storageService.currentAccount;
     if (!account) return;
     const utxos = await fetchTDCMainnet<ApiUTXO[]>({
       path: `/address/${account.address}/utxo`,
     });
-    const transactionData = { ...(data as any).data.params, utxos } as SendTDC;
+    const transactionData = { ...data.data.params, utxos } as SendTDC;
     transactionData.amount = transactionData.amount * 10 ** 8;
     const tx = await keyringService.sendTDC(transactionData);
     const psbt = Psbt.fromHex(tx);
@@ -122,9 +140,7 @@ class ProviderController {
   @Reflect.metadata("APPROVAL", [
     "SignTx",
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    (req: any) => {
-      // console.log(req);
-    },
+    (_req: any) => {},
   ])
   signTx = async ({
     data: {
@@ -132,7 +148,9 @@ class ProviderController {
     },
   }) => {
     const psbt = Psbt.fromHex(hex);
-    keyringService.signTransaction(psbt);
+    (psbt as any).__CACHE.__UNSAFE_SIGN_NONSEGWIT = true;
+    keyringService.signPsbt(psbt);
+    (psbt as any).__CACHE.__UNSAFE_SIGN_NONSEGWIT = false;
     return psbt.toHex();
   };
 }

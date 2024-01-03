@@ -3,23 +3,28 @@ import { useEffect, useState } from "react";
 
 import { KeyIcon } from "@heroicons/react/24/solid";
 import Layout from "../layout";
-import { SignTransactionProps } from "@/shared/interfaces/notification";
 import { Psbt } from "belcoinjs-lib";
 
 const SignTransaction = () => {
   const [psbt, setPsbt] = useState<Psbt>();
 
-  const { notificationController } = useControllersState((v) => ({
-    notificationController: v.notificationController,
-  }));
+  const { notificationController, keyringController } = useControllersState(
+    (v) => ({
+      notificationController: v.notificationController,
+      keyringController: v.keyringController,
+    })
+  );
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     (async () => {
       const approval = await notificationController.getApproval();
-      setPsbt(Psbt.fromHex(approval.params.data.hex as SignTransactionProps));
+      const signed = Psbt.fromHex(
+        await keyringController.signTransaction(approval.params.data?.hex)
+      );
+      setPsbt(signed);
     })();
-  }, [notificationController]);
+  }, [notificationController, keyringController]);
 
   if (!psbt) return <></>;
 

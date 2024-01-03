@@ -210,20 +210,6 @@ class StorageService {
 
   async getLocalValues() {
     const data = await browserStorageLocalGet<StorageInterface>(undefined);
-    if (Array.isArray(data.cache)) {
-      const newData: StorageInterface = {
-        cache: {
-          addressBook: (data as any).addressBook,
-          selectedWallet: 0,
-          selectedAccount: 0,
-          wallets: data.cache,
-          connectedSites: data.cache.connectedSites,
-        },
-        enc: data.enc,
-      };
-      await browserStorageLocalSet(newData);
-      return newData;
-    }
     if (data.cache === undefined) {
       return {
         cache: {
