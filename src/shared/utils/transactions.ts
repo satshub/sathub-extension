@@ -1,5 +1,5 @@
 import type { ITransaction } from "@/shared/interfaces/api";
-import { payments } from "belcoinjs-lib";
+import { payments } from "bitcoinjs-lib";
 import { AddressType } from "bellhdw/src/hd/types";
 
 export const getTransactionValue = (

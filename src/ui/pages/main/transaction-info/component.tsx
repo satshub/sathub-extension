@@ -31,7 +31,7 @@ const TransactionInfo = () => {
 
   const onOpenExplorer = async () => {
     await browserTabsCreate({
-      url: `${NINTONDO_URL}/explorer/tx/${txId}`,
+      url: `${NINTONDO_URL}/tx/${txId}`,
       active: true,
     });
   };
@@ -69,14 +69,14 @@ const TransactionInfo = () => {
               <p className={s.transactionP}>
                 {t("transaction_info.fee_label")}
               </p>
-              <span>{tx.fee / 10 ** 8} BEL</span>
+              <span>{tx.fee / 10 ** 8} BTC</span>
             </div>
             <div className={s.group}>
               <p className={s.transactionP}>
                 {t("transaction_info.value_label")}
               </p>
               <span>
-                {tx.vout.reduce((acc, cur) => cur.value + acc, 0) / 10 ** 8} BEL
+                {tx.vout.reduce((acc, cur) => cur.value + acc, 0) / 10 ** 8} BTC
               </span>
             </div>
 
@@ -151,7 +151,7 @@ const TableItem: FC<ITableItem> = ({ items, currentAddress, label }) => {
             <div className={s.tableGroup}>
               <span>#{idx}</span>
               <span className={s.tableSecond}>
-                {(i.value / 10 ** 8).toFixed(8)} BEL
+                {(i.value / 10 ** 8).toFixed(8)} BTC
               </span>
             </div>
 

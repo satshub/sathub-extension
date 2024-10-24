@@ -1,4 +1,4 @@
-import { Network } from "belcoinjs-lib";
+import { Network } from "bitcoinjs-lib";
 import browser from "./browser";
 import { getApiUrl, getContentUrl, getHistoryUrl } from "../constant";
 

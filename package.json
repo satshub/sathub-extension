@@ -35,6 +35,7 @@
     "@noble/hashes": "1.4.0",
     "bel-ord-utils": "^0.2.11",
     "belcoinjs-lib": "^0.1.3",
+    "bitcoinjs-lib": "6.1.6",
     "bellhdw": "^0.5.43",
     "bells-inscriber": "^0.2.5",
     "classnames": "2.5.1",

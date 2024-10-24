@@ -1,4 +1,4 @@
-import type bitcoin from "belcoinjs-lib";
+import type bitcoin from "bitcoinjs-lib";
 import type { ECPairInterface } from "belpair";
 
 interface DeserializeOption {

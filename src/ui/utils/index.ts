@@ -1,4 +1,4 @@
-import { Network, networks } from "belcoinjs-lib";
+import { Network, networks } from "bitcoinjs-lib";
 import { Dispatch, SetStateAction, useCallback } from "react";
 import { useShallow } from "zustand/react/shallow";
 

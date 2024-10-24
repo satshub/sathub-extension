@@ -1,4 +1,4 @@
-import { Network } from "belcoinjs-lib";
+import { Network } from "bitcoinjs-lib";
 import type { ConnectedSite } from "../permission";
 import type { IWallet } from "@/shared/interfaces";
 

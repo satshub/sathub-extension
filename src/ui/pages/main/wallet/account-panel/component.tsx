@@ -46,7 +46,7 @@ const AccountPanel = () => {
                 ) : undefined}
               </div>
             )}
-            <span className="text-xl pb-0.5 text-slate-300">BEL</span>
+            <span className="text-xl pb-0.5 text-slate-300">BTC</span>
           </div>
         </div>
         {currentAccount?.balance !== undefined ? (

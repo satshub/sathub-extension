@@ -275,7 +275,7 @@ const CreateSend = () => {
               "wallet_page.amount_in_transactions"
             )}`}</div>
             <span className="text-sm font-medium">
-              {`${((currentAccount?.balance ?? 0) / 10 ** 8).toFixed(8)} BEL`}
+              {`${((currentAccount?.balance ?? 0) / 10 ** 8).toFixed(8)} BTC`}
             </span>
           </div>
         )}

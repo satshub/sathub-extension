@@ -4,7 +4,7 @@ import { useWalletState } from "../states/walletState";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { t } from "i18next";
-import { Network } from "belcoinjs-lib";
+import { Network } from "bitcoinjs-lib";
 import { ss } from "../utils";
 import { useCallback } from "react";
 import { useTransactionManagerContext } from "../utils/tx-ctx";

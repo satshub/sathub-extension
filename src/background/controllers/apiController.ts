@@ -87,14 +87,14 @@ class ApiController implements IApiController {
 
   async getFees() {
     const data = await this.fetch<Record<string, number>>({
-      path: "/fee-estimates",
+      path: "/v1/fees/recommended",
       service: "electrs",
     });
     if (data) {
       return {
-        slow: "6" in data ? Number(data["6"].toFixed(0)) : DEFAULT_FEES.slow,
+        slow: "economyFee" in data ? Number(data["economyFee"].toFixed(0)) : DEFAULT_FEES.slow,
         fast:
-          "2" in data ? Number(data["2"].toFixed(0)) + 1 : DEFAULT_FEES.fast,
+          "fastestFee" in data ? Number(data["fastestFee"].toFixed(0)) + 1 : DEFAULT_FEES.fast,
       };
     }
   }

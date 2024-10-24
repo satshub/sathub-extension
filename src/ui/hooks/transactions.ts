@@ -1,7 +1,7 @@
 import { useGetCurrentAccount, useWalletState } from "../states/walletState";
 import { useControllersState } from "../states/controllerState";
 import { satoshisToAmount } from "@/shared/utils/transactions";
-import { Psbt, Transaction } from "belcoinjs-lib";
+import { Psbt, Transaction } from "bitcoinjs-lib";
 import type { Hex } from "@/background/services/keyring/types";
 import { t } from "i18next";
 import { Inscription, OrdUTXO } from "@/shared/interfaces/inscriptions";

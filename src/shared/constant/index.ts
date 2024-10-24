@@ -1,5 +1,5 @@
 import { isTestnet } from "@/ui/utils";
-import { Network, networks } from "belcoinjs-lib";
+import { Network, networks } from "bitcoinjs-lib";
 import { AddressType } from "bellhdw/src/hd/types";
 
 export const KEYRING_TYPE = {
@@ -15,7 +15,7 @@ export const IS_LINUX = /linux/i.test(navigator.userAgent);
 export const IS_WINDOWS = /windows/i.test(navigator.userAgent);
 
 export const NETOWRKS: { name: string; network: Network }[] = [
-  { name: "MAINNET", network: networks.bellcoin },
+  { name: "MAINNET", network: networks.bitcoin },
   { name: "TESTNET", network: networks.testnet },
 ];
 
@@ -57,17 +57,17 @@ export const EVENTS = {
 };
 
 const NINTONDO_API_URL =
-  process.env.API_URL ?? "https://electrs.nintondo.io/api";
+  process.env.API_URL ?? "https://mempool.space/api";
 
 const CONTENT_URL =
   process.env.CONTENT_URL ?? "https://content.nintondo.io/api/pub";
 const HISTORY_URL =
   process.env.HISTORY_URL ?? "https://history.nintondo.io/pub";
 
-export const NINTONDO_URL = "https://nintondo.io";
+export const NINTONDO_URL = "https://signet.sathub.io";
 
 const TESTNET_NINTONDO_API_URL =
-  process.env.TESTNET_API_URL ?? "https://testnet.nintondo.io/electrs";
+  process.env.TESTNET_API_URL ?? "https://signet.sathub.io/api";
 const TESTNET_CONTENT_URL =
   process.env.TESTNET_CONTENT_URL ?? "https://testnet.nintondo.io/api/pub";
 

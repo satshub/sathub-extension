@@ -6,7 +6,7 @@ import type {
   IWallet,
   SaveWalletsPayload,
 } from "./wallets";
-import { Network } from "belcoinjs-lib";
+import { Network } from "bitcoinjs-lib";
 
 export interface IWalletController {
   createNewWallet(props: INewWalletProps): Promise<IWallet>;

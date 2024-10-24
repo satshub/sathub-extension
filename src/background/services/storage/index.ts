@@ -11,7 +11,7 @@ import { keyringService, permissionService, storageService } from "..";
 import { excludeKeysFromObj, pickKeysFromObj } from "@/shared/utils";
 import eventBus from "@/shared/eventBus";
 import { EVENTS } from "@/shared/constant";
-import { Network, networks } from "belcoinjs-lib";
+import { Network, networks } from "bitcoinjs-lib";
 
 interface SaveWallets {
   password: string;
@@ -280,7 +280,7 @@ class StorageService {
           wallets: [],
           connectedSites: [],
           unpushedHexes: [],
-          network: networks.bellcoin,
+          network: networks.bitcoin,
         },
         enc: undefined,
       };

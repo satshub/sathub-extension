@@ -57,11 +57,11 @@ const ConfirmSend = () => {
       ),
       value:
         location.state.amount +
-        (location.state.inscriptionTransaction ? "" : " BEL"),
+        (location.state.inscriptionTransaction ? "" : " BTC"),
     },
     {
       label: t("send.confirm_send.fee"),
-      value: `${location.state.feeAmount / 10 ** 8} BEL (${
+      value: `${location.state.feeAmount / 10 ** 8} BTC (${
         location.state.includeFeeInAmount
           ? t("send.confirm_send.included")
           : t("send.confirm_send.not_included")
