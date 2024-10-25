@@ -12,7 +12,7 @@ const FinalleSend = () => {
   const onClick = async () => {
     await browserTabsCreate({
       active: true,
-      url: `${NINTONDO_URL}/explorer/tx/${txId}`,
+      url: `${NINTONDO_URL}/tx/${txId}`,
     });
   };
 

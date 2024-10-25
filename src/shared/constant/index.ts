@@ -65,6 +65,7 @@ const HISTORY_URL =
   process.env.HISTORY_URL ?? "https://history.nintondo.io/pub";
 
 export const NINTONDO_URL = "https://signet.sathub.io";
+export const NINTONDO_BASE_URL = "https://sathub.io";
 
 const TESTNET_NINTONDO_API_URL =
   process.env.TESTNET_API_URL ?? "https://signet.sathub.io/api";
