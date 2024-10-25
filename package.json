@@ -1,6 +1,6 @@
 {
-  "name": "nintondo-extension",
-  "version": "0.2.8",
+  "name": "sathub-extension",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "bun build.ts --watch",

@@ -1,8 +1,8 @@
 {
-  "short_name": "Nintondo Wallet",
+  "short_name": "Sathub Wallet",
   "author": "Nintondo",
   "manifest_version": 3,
-  "name": "Nintondo Wallet",
+  "name": "Sathub Wallet",
   "icons": {
     "48": "/logo-48.png",
     "128": "/logo-128.png"

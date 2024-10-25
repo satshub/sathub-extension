@@ -17,12 +17,12 @@ const SettingsLayout: FC<SettingsLayoutProps> = ({ children }) => {
           href="#"
           onClick={async () => {
             await browserTabsCreate({
-              url: `https://nintondo.io`,
+              url: `https://sathub.io`,
               active: true,
             });
           }}
         >
-          Nintondo team
+          sathub.io 
         </a>
       </div>
     </div>
