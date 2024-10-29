@@ -81,6 +81,9 @@ export const getApiUrl = (network: Network) =>
 export const getHistoryUrl = (network: Network) =>
   isTestnet(network) ? TESTNET_HISTORY_URL : HISTORY_URL;
 
+export const getElectrumUrl = (network: Network) =>
+    isTestnet(network) ? "https://electrpc.sathub.io/api" : "mainnode.sathub.io:60601";
+
 const TESTNET_HISTORY_URL =
   process.env.TESTNET_HISTORY_URL ?? "https://testnet.nintondo.io/history/pub";
 

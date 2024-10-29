@@ -88,7 +88,7 @@ class ApiController implements IApiController {
         const data = await this.fetch<ApiUTXO[]>({
             path: `/address/${address}/utxo`,
             params: params as Record<string, string>,
-            service: "electrs",
+            service: "electrum",
         });
         if (Array.isArray(data)) {
             return data;

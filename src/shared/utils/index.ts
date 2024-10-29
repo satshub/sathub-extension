@@ -1,6 +1,6 @@
 import { Network } from "bitcoinjs-lib";
 import browser from "./browser";
-import { getApiUrl, getContentUrl, getHistoryUrl } from "../constant";
+import { getApiUrl, getContentUrl, getElectrumUrl, getHistoryUrl } from "../constant";
 
 export const t = (name: string) => browser.i18n.getMessage(name);
 
@@ -16,7 +16,7 @@ export interface fetchProps extends RequestInit {
   error?: boolean;
   json?: boolean;
   network: Network;
-  service: "electrs" | "content" | "history";
+  service: "electrs" | "content" | "history" | "electrum";
 }
 
 const getBaseUrl = (service: fetchProps["service"], testnet: Network) => {
@@ -27,6 +27,8 @@ const getBaseUrl = (service: fetchProps["service"], testnet: Network) => {
       return getContentUrl(testnet);
     case "history":
       return getHistoryUrl(testnet);
+    case "electrum":
+      return getElectrumUrl(testnet);
   }
 };
 
