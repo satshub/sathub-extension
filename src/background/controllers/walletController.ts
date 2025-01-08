@@ -9,8 +9,8 @@ import type {
 } from "@/shared/interfaces";
 import keyringService from "@/background/services/keyring";
 import { excludeKeysFromObj } from "@/shared/utils";
-import * as bip39 from "nintondo-bip39";
-import { AddressType, HDPrivateKey } from "bellhdw";
+import * as bip39 from "bip39";
+import { AddressType, HDPrivateKey } from "sathub-wallet-hdw";
 import { Network } from "bitcoinjs-lib";
 import { isTestnet } from "@/ui/utils";
 

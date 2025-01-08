@@ -10,7 +10,7 @@ import CopyBtn from "@/ui/components/copy-btn";
 import toast from "react-hot-toast";
 import SwitchAddressType from "@/ui/components/switch-address-type";
 import { t } from "i18next";
-import { AddressType } from "bellhdw";
+import { AddressType } from "sathub-wallet-hdw";
 import Switch from "@/ui/components/switch";
 import { ss } from "@/ui/utils";
 import { ADDRESS_TYPES } from "@/shared/constant";

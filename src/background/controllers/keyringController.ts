@@ -1,8 +1,8 @@
-import { Network, Psbt } from "belcoinjs-lib";
+import { Network, Psbt } from "bitcoinjs-lib";
 import { keyringService } from "../services";
 import type { Hex, SendBEL, SendOrd } from "../services/keyring/types";
 import type { IPrivateWallet } from "@/shared/interfaces";
-import type { AddressType } from "bellhdw";
+import type { AddressType } from "sathub-wallet-hdw";
 import { OrdUTXO } from "@/shared/interfaces/inscriptions";
 import { ApiUTXO } from "@/shared/interfaces/api";
 

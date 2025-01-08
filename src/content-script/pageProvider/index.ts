@@ -10,7 +10,7 @@ import type {
   SendBEL,
   SignPsbtOptions,
 } from "@/background/services/keyring/types";
-import { INintondoProvider, NetworkType } from "nintondo-sdk";
+import { INintondoProvider, NetworkType } from "sathub-wallet-sdk";
 
 const script = document.currentScript;
 const channelName = script?.getAttribute("channel") || "NINTONDOWALLET";

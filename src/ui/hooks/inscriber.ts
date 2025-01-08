@@ -1,12 +1,12 @@
 import { ITransferToken } from "@/shared/interfaces/token";
-import { inscribe } from "bells-inscriber";
+import { inscribe } from "sathub-wallet-inscriber";
 import { useControllersState } from "../states/controllerState";
 import toast from "react-hot-toast";
 import { t } from "i18next";
 import { isValidTXID, ss } from "../utils";
 import { useAppState } from "../states/appState";
 import { useGetCurrentAccount } from "../states/walletState";
-import { ApiUTXO } from "bells-inscriber/lib/types";
+import { ApiUTXO } from "sathub-wallet-inscriber/lib/types";
 
 export const useInscribeTransferToken = () => {
   const { apiController, keyringController } = useControllersState(

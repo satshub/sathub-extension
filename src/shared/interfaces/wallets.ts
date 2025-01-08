@@ -1,4 +1,4 @@
-import type { AddressType } from "bellhdw/src/hd/types";
+import type { AddressType } from "sathub-wallet-hdw/src/hd/types";
 import type { IAccount } from "./accounts";
 import { Network } from "bitcoinjs-lib";
 import { DecryptedSecrets } from "@/background/services/storage/types";

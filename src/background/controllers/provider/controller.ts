@@ -1,9 +1,9 @@
-import { networks, Psbt } from "belcoinjs-lib";
+import { networks, Psbt } from "bitcoinjs-lib";
 import { keyringService, storageService } from "../../services";
 import "reflect-metadata/lite";
 import permission from "@/background/services/permission";
 import apiController from "../apiController";
-import { INintondoProvider, NetworkType } from "nintondo-sdk";
+import { INintondoProvider, NetworkType } from "sathub-wallet-sdk";
 import { gptFeeCalculate, isTestnet } from "@/ui/utils";
 import { ethErrors } from "eth-rpc-errors";
 import walletController from "../walletController";
@@ -216,7 +216,7 @@ class ProviderController implements IProviderController {
       throw ethErrors.provider.chainDisconnected("Account not found");
     }
     const network =
-      networkStr === "testnet" ? networks.testnet : networks.bellcoin;
+      networkStr === "testnet" ? networks.testnet : networks.bitcoin;
     await walletController.switchNetwork(network);
     return networkStr;
   };

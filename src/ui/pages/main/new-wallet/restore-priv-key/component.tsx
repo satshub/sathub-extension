@@ -4,7 +4,7 @@ import SwitchAddressType from "@/ui/components/switch-address-type";
 import { useCreateNewWallet } from "@/ui/hooks/wallet";
 import { useAppState } from "@/ui/states/appState";
 import { ss } from "@/ui/utils";
-import { AddressType } from "bellhdw";
+import { AddressType } from "sathub-wallet-hdw";
 import { t } from "i18next";
 import { useState } from "react";
 import { useForm } from "react-hook-form";

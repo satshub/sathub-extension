@@ -1,16 +1,16 @@
 import { KeyringServiceError } from "./consts";
 import type { Hex, Json, SendBEL, SendOrd, UserToSignInput } from "./types";
 import { storageService } from "@/background/services";
-import { Network, payments, Psbt } from "belcoinjs-lib";
+import { Network, payments, Psbt } from "bitcoinjs-lib";
 import { getScriptForAddress, toXOnly } from "@/shared/utils/transactions";
 import {
   createMultisendOrd,
   createSendBEL,
   createSendOrd,
-} from "bel-ord-utils";
-import { SimpleKey, HDPrivateKey, AddressType } from "bellhdw";
-import HDSimpleKey from "bellhdw/src/hd/simple";
-import type { Keyring } from "bellhdw/src/hd/types";
+} from "sathub-wallet-ord-utils";
+import { SimpleKey, HDPrivateKey, AddressType } from "sathub-wallet-hdw";
+import HDSimpleKey from "sathub-wallet-hdw/src/hd/simple";
+import type { Keyring } from "sathub-wallet-hdw/src/hd/types";
 import { INewWalletProps } from "@/shared/interfaces";
 import { ApiOrdUTXO, OrdUTXO } from "@/shared/interfaces/inscriptions";
 import { ApiUTXO } from "@/shared/interfaces/api";

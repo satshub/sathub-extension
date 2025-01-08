@@ -1,7 +1,7 @@
 import SwitchAddressType from "@/ui/components/switch-address-type";
 import { useControllersState } from "@/ui/states/controllerState";
 import { useGetCurrentWallet, useWalletState } from "@/ui/states/walletState";
-import { AddressType } from "bellhdw";
+import { AddressType } from "sathub-wallet-hdw";
 import { useNavigate } from "react-router-dom";
 import { ss } from "@/ui/utils";
 import toast from "react-hot-toast";

@@ -1,6 +1,6 @@
 import type { ITransaction } from "@/shared/interfaces/api";
 import { payments } from "bitcoinjs-lib";
-import { AddressType } from "bellhdw/src/hd/types";
+import { AddressType } from "sathub-wallet-hdw/src/hd/types";
 
 export const getTransactionValue = (
   transaction: ITransaction,

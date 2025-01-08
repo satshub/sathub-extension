@@ -2,7 +2,7 @@ import {
   browserStorageLocalGet,
   browserStorageLocalSet,
 } from "@/shared/utils/browser";
-import * as encryptorUtils from "nintondo-browser-passworder";
+import * as encryptorUtils from "@metamask/browser-passworder";
 import type { IAccount, IPrivateWallet, IWallet } from "@/shared/interfaces";
 import type { DecryptedSecrets, StorageInterface } from "./types";
 import type { IAppStateBase, IWalletStateBase } from "@/shared/interfaces";

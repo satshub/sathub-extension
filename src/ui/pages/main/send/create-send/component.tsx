@@ -81,7 +81,7 @@ const CreateSend = () => {
       }
 
       let data;
-
+      console.log("nscriptionTransaction:", inscriptionTransaction);
       try {
         data = !inscriptionTransaction
           ? await createTx(
@@ -92,6 +92,7 @@ const CreateSend = () => {
             )
           : await createOrdTx(address, feeRate, inscription!);
       } catch (e) {
+          console.log("error:", e);
         if (e instanceof Error) toast.error(e.message);
       }
 

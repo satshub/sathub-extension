@@ -1,6 +1,6 @@
 import { isTestnet } from "@/ui/utils";
 import { Network, networks } from "bitcoinjs-lib";
-import { AddressType } from "bellhdw/src/hd/types";
+import { AddressType } from "sathub-wallet-hdw/src/hd/types";
 
 export const KEYRING_TYPE = {
   HdKeyring: "HD Key Tree",
