@@ -39,6 +39,7 @@
     "buffer": "^6.0.3",
     "classnames": "2.5.1",
     "dayjs": "^1.11.13",
+    "ecpair": "^3.0.0",
     "eth-rpc-errors": "4.0.3",
     "events": "^3.3.0",
     "i18next": "23.12.2",

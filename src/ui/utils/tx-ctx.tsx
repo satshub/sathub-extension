@@ -37,7 +37,7 @@ const useTransactionManager = (): TransactionManagerContextType | undefined => {
   );
 
   const updateLastBlock = useCallback(async () => {
-    const data = await apiController.getLastBlockBEL();
+    const data = await apiController.getLastBlockBTC();
     if (data) setLastBlock(data);
   }, [apiController]);
 
@@ -96,7 +96,7 @@ const useTransactionManager = (): TransactionManagerContextType | undefined => {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     (async () => {
       const [data] = await Promise.all([
-        apiController.getBELPrice(),
+        apiController.getBTCPrice(),
         updateLastBlock(),
       ]);
       if (data?.bellscoin) {

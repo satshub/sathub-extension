@@ -1,5 +1,5 @@
 import type bitcoin from "bitcoinjs-lib";
-import type { ECPairInterface } from "belpair";
+import type { ECPairInterface } from "ecpair";
 
 interface DeserializeOption {
   hdPath?: string;
